@@ -1,0 +1,3 @@
+removeimage(){
+alert("hhgj");
+}

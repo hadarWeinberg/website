@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    background-color: black !important;
+    align-content: center;
+    min-height: 100vh;
+ 
+}
+section{
+    display: grid;
+    min-height: 90vh;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.content{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.content h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 6px;
+    opacity: 0.9;
+}
+.content span {
+    height: 0.5px;
+    width: 80px;
+    background: #777;
+    margin: 30px 0;
+}
+.content p{
+    padding-bottom: 15px;
+    font-weight: 300;
+    opacity: 0.7;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+.links{
+    margin: 15px 0;
+}
+.links li{
+    border: 0.5px solid #777;
+    list-style: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 160px;
+    text-align: center;
+}
+.links li a{
+    text-transform: uppercase;
+    color: #777;
+    text-decoration: none;
+}
+.links li:hover{
+    border-color: #06d6a0;
+}
+.links li:hover a{
+    color :#06d6a0;
+}
+.vertical-line{
+    height: 30px;
+    width: 0.5px;
+    background: #777;
+    margin: 0 auto;
+}
+.icons{
+    display: flex;
+    padding: 15px 0;
+}
+.icons li{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+}
+.icons li i{
+    font-size: 26px;
+    opacity: 0.8;
+}
+.icons li i:hover{
+    color: #06d6a0;
+}
+/*תמונה בהתחלה של התיאטרון*/
+
+.photo-fluid{
+background: url("../images/aboutImage.jpg")  center/cover no-repeat ;
+padding-left: 15%;
+padding-right:15%;
+width: 85%;
+margin: auto;
+margin-bottom: 10px;
+margin-top: 10px;
+widows: 100%;
+height: 100vh;
+background-size: 100% 100%;
+background-position: center;
+
+}
+ #footer{
+      width:85%;
+      margin:auto;
+      height:20vh;
+  }
+  /*team section*/
+.team-section{
+  overflow: hidden;
+  text-align: center;
+  width: 85%;
+  background: gray;
+  margin: auto;
+  margin-top: 10px;
+
+}
+.team-section h1{
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  color: white;
+  font-size: 40px;
+
+}
+.line{
+  display:block;
+  margin: auto;
+  width: 160px;
+  height: 3px;
+  background: black;
+  margin-bottom: 40px;
+
+}
+
+
+.ps{
+  margin-bottom: 40px;
+
+}
+.ps a{
+  display: inline-block;
+  margin:0 30px;
+  width:160px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 50%;/*הופף את התמונה לעיגול*/
+
+}
+.ps a img{
+  width: 100%;/*שבעיגול התמונה תהיה 100 אחוז*/
+  filter: grayscale(100%); /*הופך את התמונה לאפור*/
+  transition: 0.4s all;
+
+}
+.ps a:hover >img{
+  filter: none;
+
+}
+/*כשלוחצים על תמונה הטקסט משתנה*/
+.section{
+  width: 600px;
+  margin: auto;
+  font-size: 20px;
+  color: white;
+  text-align: justify;
+  height: 0;
+  overflow: hidden;
+
+
+}
+.section:target{
+  height: auto;
+}
+.name1{
+  display: block;
+  font-size: 25px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+    
+}
+
+
+
+/*התאמה למסך קטן יותר*/
+@media(max-width: 992px){
+    section{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    #footer{
+        width:100%;
+    }
+    .image{
+        height: 100vh;
+    }
+    .content{
+       
+    }
+    .content h2{
+        font-size: 100px;
+        margin-top: 50px;
+    }
+    .content span{
+        margin: 20px 0;
+    }
+    .content p{
+        font-size: 14px;
+    }
+    .links li a{
+        font-size: 14px;
+    }
+    .links{
+        margin: 5px 0;
+    }
+    .links li{
+        padding: 6px 10px;
+    }
+    .icons li i{
+        font-size: 15px;
+    }
+    .team-section{
+        width:100%;
+    }
+    .photo-fluid{
+         width:100%;
+    }
+  
+    .content p{
+        font-size:25px ;
+        width:93%;
+    }
+    p{
+        font-size:25px;
+        margin:10px;
+        display:justify;
+    }
+   .team-section h1{
+         font-size:100px;
+    }
+    .team-section name1{
+          font-size:50px;
+    }
+    
+}
+

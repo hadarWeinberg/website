@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he-IL">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta content="IE-edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  
+  
+  
+  <title>CAST</title>
+   <canvas id="canvas1"></canvas>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/cast.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/2bca458f4e.js" crossorigin="anonymous"></script>
+  <!--load all styles from the website font awsome icons -->
+
+  <!-- google fonts
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  font-family: 'Amatic SC', cursive;-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+  
+  <script src="js/index.js"></script>
+  <script>
+    function setCookie(cname,cvalue,exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+    function checkCookie() {
+      var user=getCookie("username");
+      if (user != "") {
+        alert("Welcome again " + user);
+      } else {
+         user = prompt("Please enter your name:","");
+         if (user != "" && user != null) {
+           setCookie("username", user, 30);
+         }
+      }
+    }
+    </script>
+  <SCRIPT LANGUAGE="JavaScript">
+    function GetCookie (name) {
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+    while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg)
+    return getCookieVal (j);
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break;
+    }
+    return null;
+    }
+    function SetCookie (name, value) {
+    var argv = SetCookie.arguments;
+    var argc = SetCookie.arguments.length;
+    var expires = (argc > 2) ? argv[2] : null;
+    var path = (argc > 3) ? argv[3] : null;
+    var domain = (argc > 4) ? argv[4] : null;
+    var secure = (argc > 5) ? argv[5] : false;
+    document.cookie = name + "=" + escape (value) +
+    ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+    ((path == null) ? "" : ("; path=" + path)) +
+    ((domain == null) ? "" : ("; domain=" + domain)) +
+    ((secure == true) ? "; secure" : "");
+    }
+    function DeleteCookie (name) {
+    var exp = new Date();
+    exp.setTime (exp.getTime() - 1);
+    var cval = GetCookie (name);
+    document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+    }
+    var expDays = 30;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+    function amt(){
+    var count = GetCookie('count')
+    if(count == null) {
+    SetCookie('count','1')
+    return 1
+    }
+    else {
+    var newcount = parseInt(count) + 1;
+    DeleteCookie('count')
+    SetCookie('count',newcount,exp)
+    return count
+       }
+    }
+    function getCookieVal(offset) {
+    var endstr = document.cookie.indexOf (";", offset);
+    if (endstr == -1)
+    endstr = document.cookie.length;
+    return unescape(document.cookie.substring(offset, endstr));
+    }
+    // End -->
+    </SCRIPT>
+ 
+</head>
+
+<body>
+
+
+  <div class="container1-fluid" >
+    <section id="title""">
+      <nav class="navbar  navbar-expand-lg navbar-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            
+            
+          
+            <li class="nav-item active">
+              <a class="nav-link" href="">דף הבית</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="Includes/talents.html">השחקנים שלנו</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Includes/news&social.html"> NEWSַַ&SOCIAL</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#download"> הורדה</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Includes/about.html">אודות</a>
+            </li>
+            
+            <li id="register" class="nav-item">
+              <a class="nav-link" href="Includes/php/signup.php">הרשמה</a>
+            </li>
+            <li id="login" class="nav-item">
+              <a class="nav-link" href="Includes/php/login.php">התחברות</a>
+            </li>
+            
+            <li id="logout" class="nav-item">
+                <a class="nav-link" href="Includes/php/logout.php">התנתקות</a>
+            </li>
+            <span id="hello-user" class="hello-user"></span>
+            
+            <li>
+              <form class="form-inline"><input class="form-control" type="search" placeholder="Search" aria-label="Search"></form>
+            </li>
+
+          </ul>
+          
+          <div>
+              
+          </div>
+          
+          <a class="navbar-brand" href="#">
+            <img src="images/cast1.png" alt="" width="100" height="100" class="d-inline-block align-top">
+
+          </a>
+        </div>
+      </nav>
+      <div class="title ">
+        <!-- כדי שהכותרת תהיה רספונסבית הוספנו את הסטייל הזה-->
+        <h1 style="font-size:10vw;">
+          CAST
+        </h1>
+
+
+
+        <a href="Includes/php/login.php" class="btn">SIGN IN</a>
+        <a href="Includes/php/signup.php" class="btn">SIGN UP</a>
+
+      </div>
+    </section>
+
+
+  </div>
+
+
+
+
+
+  <!-- דף של הורדת האפליקציה-->
+
+
+  </section>
+
+  <section id="download">
+    <div class="container2-fluid">
+      <div class=" videoArea">
+              <video controls>
+                  <source src="videos/castVideo.mp4" type="video/mp4">
+                  Oops! Your browser does not support HTML5 video
+              </video>
+          </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+
+
+          <h2>
+            פלטפורמה למציאת השחקן
+            <br>
+            המתאים לתפקיד !
+
+            <br>
+
+            CAST
+
+
+            <br>
+            כל כך קל.
+            <br>
+            !הורידו עכשיו
+
+
+
+          </h2>
+
+          <button type="button"><img class="icond"
+              src="https://images.squarespace-cdn.com/content/v1/55e50bdfe4b0a8e8abf3e82c/1532445518096-ZIE5N2FBQP5J7H31RMKF/ke17ZwdGBToddI8pDm48kLVvASrjTasyVRL7pDcruINZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVE6NuP7hFDNQxTVsA3HqqbN8iOga9h4TKX7aaUAcobSqWQ6l2WM7tn7mqHTODzkmeM/global-playstore.png?format=300w" /></button><br><br>
+          <button type="button"><img class="icond"
+              src="https://images.squarespace-cdn.com/content/v1/55e50bdfe4b0a8e8abf3e82c/1532445591949-LNPBLRNWIM94ILGQTR2J/ke17ZwdGBToddI8pDm48kEd7iqJ-Uksge5vTBoOZIihZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGeHtuNT_Le_7p0uEaHKGzEqTT6B91zJjgp8zKiL4Yayhur-lC0WofN0YB1wFg-ZW0/global-appstore.png?format=300w" /></button>
+        </div>
+
+
+        <div class="col-lg-6">
+          <div>
+            <img class="iphone" src="images/iphone.jpeg" alt="iphone-mockup">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- סקטור של כל האאיקונים חסכון בזמן כסף ונוח-->
+
+  <section id="features">
+    <div class="row">
+
+
+      <div class="feature-box col-lg-4">
+        <i class="icon far fa-check-circle fa-4x"></i>
+
+        <h3>קל לשימוש</h3>
+        <p>
+          בקלות ונוחות תוכלו להיחשף למגוון רחב של אודישנים ושחקנים.
+        </p>
+      </div>
+      <div class="feature-box col-lg-4">
+        <i class=" icon fas fa-stopwatch fa-4x"></i>
+
+
+        <h3>חסכון בזמן</h3>
+
+        <p>אין צורך להגיע יותר לאודישן!אפשר לעלות אודישן ישירות לאתר והבימאי יוכל לצפות בו</p>
+      </div>
+      <div class="feature-box col-lg-4 ">
+        <i class=" icon fas fa-coins fa-4x"></i>
+        <!--ה FA 4X זה כדי לשנות את הגודל-->
+        <h3>חסכון בכסף</h3>
+        <p>שכחו מהעמלות הגבוהות של הסוכנות.האתר הוא חינמי </p>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Testimonials  המלצות וציטוטים-->
+
+  <section id="testimonials">
+    <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2 class="testimonial-text">"לא צריכה כבר לשבור את הראש שלי ולמיין כל פעם שחקנים. בתוך שבוע בלבד, כבר הרמתי הפקה חדשה עם שחקנים מהאתר"</h2>
+          <img class="testimonial-image" src="images/vital.jpg" alt="vital-profile">
+          <em>ויטל ארליך, ת"א , בימאית</em>
+
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">"פיספסתי כל כך הרבה משמרות בעבודה על ימי אודישן! מאז שאני באתר, הכל כל כך פשוט ואין צורך להפסיד עבודה"</h2>
+          <img class="testimonial-image" src="images/omer.jpg" alt="omer-profile">
+          <em>עומר קטנוב, גבעתיים, שחקן ומלצר</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">"הסוכנויות גובות עמלות כל כך גבוהות שזה לא לעניין ! פה באתר, העמלה הינה 10%"</h2>
+          <img class="testimonial-image" src="images/gal.jpeg" alt="gal-profile">
+          <em>גל אלקובי, נהורה,סטודנטית למשחק</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">"בעקבות שימוש באתר, הצלחתי להתקבל בקלות למספר תפקידים שונים! נחשפתי למגוון רחב של אודישנים"</h2>
+          <img class="testimonial-image" src="images/einat.jpeg" alt="einat-profile">
+          <em>עינת ארליך, ת"א-יפו, שחקנית"</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">"סיננתי שחקנים לפי תכונות ונחשפתי לכל כך הרבה שחקנים שבחיים לא הייתי מגיעה אליהם! זה כזה פשוט!"</h2>
+          <img class="testimonial-image" src="images/hadar.jpeg" alt="hadar-profile">
+          <em>הדר ויינברג, ראשון לציון, בימאית </em>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+
+      </a>
+      <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+
+      </a>
+    </div>
+
+
+
+
+  </section>
+
+  <!-- זכויות יוצרים -->
+
+  <footer id="fotter">
+    <a href="http://www.facebook.com"><i class="social-icon fab fa-facebook-f" ></i></a>
+    <a href="http://www.instagram.com"><i class="social-icon fab fa-instagram"></i></a>
+    <a href="mailto: einaterlich123@gmail.com"><i class="social-icon fas fa-envelope"></i></a>
+
+    <p class="text-center mt-3" style="color:white">©ALL RIGHTS RESERVED TO CAST</p>
+  </footer>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ 
+  <script src = "../java/func1.js.js"></script>
+  <SCRIPT LANGUAGE="JavaScript">
+    document.write("You've been here <b>" + amt() + "</b> times.")
+    </SCRIPT>
+    <script src = "../java/canvas.js"></script> 
+  <script src = "../java/cookie.js"></script>  
+</body>
+
+</html>

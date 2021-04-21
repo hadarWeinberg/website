@@ -1,0 +1,2 @@
+[11-Feb-2021 21:13:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home/einater/public_html/Includes/php/db_credentials.php on line 8
+[11-Feb-2021 21:15:46 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'einater_admin'@'localhost' to database 'einater_castdb' in /home/einater/public_html/Includes/php/db_credentials.php on line 8
